@@ -430,13 +430,13 @@ library SafeMath {
   }
 
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b <= a);
+    assert(b <= a); // Note while this prevent and underflow in on case the assert funtion here can still be exploited be changing the order of the argument 
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c >= a);
+    assert(c >= a); // Note while this prevent and underflow in on case the assert funtion here can still be exploited be changing the order of the argument 
     return c;
   }
 }
